@@ -36,10 +36,9 @@ intoTuple [_, min_, max_, [char], pwd] = (read min_, read max_, char, pwd)
 intoTuple x = error "Error in input format"
 
 getRegexGroups :: String -> [[String]]
-getRegexGroups x = x =~ "([0-9]+)-([0-9]+) ([a-zA-Z]): ([a-zA-Z]+)"
+getRegexGroups x = x =~ "^([0-9]+)-([0-9]+) ([a-zA-Z]): ([a-zA-Z]+)$"
 
 aoc2a :: IO ()
 aoc2a = do
   input <- getInput 2
-  let s2 = map format input
-  print $ length . filter isValid $ s2
+  print . length . filter (isValid . format) $ input

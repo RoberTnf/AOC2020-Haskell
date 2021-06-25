@@ -16,7 +16,8 @@ type Row = (Int, Int, Char, String)
 -- False
 isValid' :: Row -> Maybe Bool
 isValid' (firstIdx, secondIdx, char, pwd) =
-  let firstLetter = pwd `getIndex` (firstIdx - 1)
+  let getIndex l n = if length l >= n then Just (l !! n) else Nothing
+      firstLetter = pwd `getIndex` (firstIdx - 1)
       secondLetter = pwd `getIndex` (secondIdx - 1)
    in do
         firstBool <- fmap (== char) firstLetter
@@ -28,9 +29,6 @@ isValid row =
   let unpack (Just x) = x
       unpack Nothing = False
    in unpack $ isValid' row
-
-getIndex :: [a] -> Int -> Maybe a
-getIndex l n = if length l >= n then Just (l !! n) else Nothing
 
 -- |
 -- >>> format "1-3 a: abcde"
