@@ -1,0 +1,32 @@
+name: CI
+
+# Trigger the workflow on push or pull request, but only for the main branch
+on:
+  push:
+
+jobs:
+  stack:
+    name: Ubuntu - stack (test)
+    runs-on: ubuntu-latest 
+
+    steps:
+    - name: Install stack
+      run : |
+        sudo apt-get update && sudo apt-get install -y haskell-stack build-essential libtinfo-dev && sudo stack upgrade --force-download 
+
+    - uses: actions/checkout@v2
+
+    - name: Debug ls
+      run: ls -la
+
+    - name: Install dependencies
+      run: |
+        stack build --test --bench --no-run-tests --no-run-benchmarks --only-dependencies
+
+    - name: Build
+      run: |
+        stack build --test --bench --no-run-tests --no-run-benchmarks
+
+    - name: Test
+      run: |
+        stack test --system-ghc
