@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Modified from https://github.com/haskelling/aoc2020
+
+year=2020
+for ((day=1 ; day <= $1; day++)) do
+  filename="$day".input
+  if [ -r "$filename" ]; then
+    continue  # make sure we don't fetch the same file twice!
+  fi
+  curl -sS -o "$filename" -b "$AOC_COOKIE" https://adventofcode.com/"$year"/day/"$day"/input
+done

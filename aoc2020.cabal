@@ -1,0 +1,71 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           aoc2020
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/RoberTnf/aoc2020#readme>
+homepage:       https://github.com/RoberTnf/aoc2020#readme
+bug-reports:    https://github.com/RoberTnf/aoc2020/issues
+author:         Roberto Diaz Perez
+maintainer:     robertodiaztnf@gmail.com
+copyright:      2021 Roberto Diaz Perez
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/RoberTnf/aoc2020
+
+library
+  exposed-modules:
+      AOC
+      AOC1a
+      AOC1b
+      AOC2a
+      AOC2b
+      AOC3a
+      AOC3b
+      Lib
+  other-modules:
+      Paths_aoc2020
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , regex-tdfa
+  default-language: Haskell2010
+
+executable main
+  main-is: main.hs
+  other-modules:
+      Paths_aoc2020
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoc2020
+    , base >=4.7 && <5
+    , regex-tdfa
+  default-language: Haskell2010
+
+test-suite aoc2020-test
+  type: exitcode-stdio-1.0
+  main-is: doctest.hs
+  other-modules:
+      Paths_aoc2020
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoc2020
+    , base >=4.7 && <5
+    , doctest
+    , regex-tdfa
+  default-language: Haskell2010

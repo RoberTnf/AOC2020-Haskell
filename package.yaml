@@ -1,0 +1,53 @@
+name:                aoc2020
+version:             0.1.0.0
+github:              "RoberTnf/aoc2020"
+license:             BSD3
+author:              "Roberto Diaz Perez"
+maintainer:          "robertodiaztnf@gmail.com"
+copyright:           "2021 Roberto Diaz Perez"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/RoberTnf/aoc2020#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- regex-tdfa
+
+library:
+  source-dirs: src
+
+executables:
+  main:
+    main:                main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2020
+
+
+tests:
+  aoc2020-test:
+    main:                doctest.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - aoc2020
+    - doctest
+
+    
