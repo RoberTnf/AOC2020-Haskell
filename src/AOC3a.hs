@@ -1,8 +1,6 @@
 module AOC3a where
 
 import AOC
-import Text.Regex.TDFA
-
 -- |
 -- >>> countTreesInPath $ lines "..##.......\n#...#...#..\n.#....#..#.\n..#.#...#.#\n.#...##..#.\n..#.##.....\n.#.#.#....#\n.#........#\n#.##...#...\n#...##....#\n.#..#...#.#"
 -- 7

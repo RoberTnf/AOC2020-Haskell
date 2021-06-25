@@ -1,8 +1,6 @@
 module AOC3b where
 
 import AOC
-import Text.Regex.TDFA
-
 type Step = (Int, Int)
 
 -- $setup
