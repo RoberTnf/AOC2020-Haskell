@@ -22,7 +22,7 @@ inputToMap input = Map.fromList $ map (\s -> (getMainBag s, getSecondaryBags s))
 -- |
 -- >>> bagsCanCarry (inputToMap bigS2) "shiny gold"
 -- 6
--- 
+--
 -- >>> bagsCanCarry (inputToMap bigS) "shiny gold"
 -- 32
 bagsCanCarry :: BagMap -> String -> Int
@@ -31,10 +31,6 @@ bagsCanCarry input s =
    in case length childBags of
         0 -> 0
         _ -> sum $ Map.mapWithKey (\name n -> n * (bagsCanCarry input name + 1)) childBags
-
-unwrap :: Maybe p -> p
-unwrap (Just x) = x
-unwrap Nothing = error "Unwrap nothing"
 
 -- |
 -- >>> getMainBag s

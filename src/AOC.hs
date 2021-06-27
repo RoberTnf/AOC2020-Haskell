@@ -9,3 +9,7 @@ cartesianProduct xs ys = xs >>= \x -> ys >>= \y -> return (x, y)
 -- https://stackoverflow.com/a/36656030
 xor :: Eq a => a -> a -> Bool
 xor a b = a /= b
+
+unwrap :: Maybe p -> p
+unwrap (Just x) = x
+unwrap Nothing = error "Unwrap nothing"

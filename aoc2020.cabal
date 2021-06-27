@@ -40,6 +40,8 @@ library
       AOC6b
       AOC7a
       AOC7b
+      AOC8a
+      AOC8b
   other-modules:
       Paths_aoc2020
   hs-source-dirs:
