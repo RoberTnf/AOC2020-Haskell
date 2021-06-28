@@ -16,6 +16,8 @@ import AOC7a
 import AOC7b
 import AOC8a
 import AOC8b
+import AOC9a
+import AOC9b
 import System.Environment
 
 main :: IO ()
@@ -37,4 +39,6 @@ main = do
     "7b" -> aoc7b
     "8a" -> aoc8a
     "8b" -> aoc8b
+    "9a" -> aoc9a
+    "9b" -> aoc9b
     x -> error $ "Exercise " ++ x ++ " does not exist"

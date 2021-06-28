@@ -24,7 +24,7 @@ dependencies:
 - regex-tdfa
 - split
 - containers
-
+- dequeue
 library:
   source-dirs: src
 

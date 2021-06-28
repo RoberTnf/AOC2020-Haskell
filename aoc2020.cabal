@@ -42,6 +42,8 @@ library
       AOC7b
       AOC8a
       AOC8b
+      AOC9a
+      AOC9b
   other-modules:
       Paths_aoc2020
   hs-source-dirs:
@@ -49,6 +51,7 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , dequeue
     , regex-tdfa
     , split
   default-language: Haskell2010
@@ -64,6 +67,7 @@ executable main
       aoc2020
     , base >=4.7 && <5
     , containers
+    , dequeue
     , regex-tdfa
     , split
   default-language: Haskell2010
@@ -80,6 +84,7 @@ test-suite aoc2020-test
       aoc2020
     , base >=4.7 && <5
     , containers
+    , dequeue
     , doctest
     , regex-tdfa
     , split
