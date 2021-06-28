@@ -1,6 +1,3 @@
--- Things got a little more difficult here. Lots of small issues with regexp, that I added into the doctests.
--- Also had some issues dealing with Lookup and its Maybe Bool type, solved it by using the justAndTrue function.
-
 module AOC6b where
 
 import AOC

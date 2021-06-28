@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       AOC
+      AOC10a
       AOC1a
       AOC1b
       AOC2a
