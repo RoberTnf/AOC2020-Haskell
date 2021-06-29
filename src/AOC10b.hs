@@ -16,9 +16,9 @@ import Data.List
 -- 19208
 solve :: [Int] -> Int
 solve input' =
-  let input = (maximum input' + 3) : 0 : input'
-      differences = map (\(x, y) -> y - x) $ rollingWindow2 . sort $ input
-   in foldr ((*) . getPossiblePaths . length) 1 $ filter (\x -> head x == 1) . group $ differences
+  let input = (maximum input' + 3) : 0 : input' -- The input has two extra slots
+      differences = map (\(x, y) -> y - x) $ rollingWindow2 . sort $ input -- List of differences in Jolts
+   in foldr ((*) . getPossiblePaths . length) 1 $ filter (\x -> head x == 1) . group $ differences -- Only number of contiguous differences of 1 matter.
 
 {-
 Pretty proud of this one!
@@ -35,6 +35,13 @@ n-1, n-2 and n-3, depending on your first step.
 
 Could be memoized, as it scales quite hard with n, but there's no need for this problem.
 -}
+
+-- |
+-- >>> getPossiblePaths 4
+-- 7
+--
+-- >>> getPossiblePaths 5
+-- 13
 getPossiblePaths :: Int -> Int
 getPossiblePaths 1 = 1
 getPossiblePaths 2 = 2
