@@ -27,6 +27,7 @@ library
   exposed-modules:
       AOC
       AOC10a
+      AOC10b
       AOC1a
       AOC1b
       AOC2a

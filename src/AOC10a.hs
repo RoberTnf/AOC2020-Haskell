@@ -17,15 +17,11 @@ import Data.List
 solve :: [Int] -> Int
 solve input' =
     let input = (maximum input' +3):0:input'
-        differences = map (\(x,y) -> y - x) $ inPairs . sort $ input
+        differences = map (\(x,y) -> y - x) $ rollingWindow2 . sort $ input
         count n = (length . filter (==n) $ differences) 
     in count 3 * count 1 
 
 
--- |
--- >>> inPairs [1,2,3,4]
--- [(1,2),(2,3),(3,4)]
-inPairs l = zip (init l) (tail l) 
 
 -- |
 -- >>> short
