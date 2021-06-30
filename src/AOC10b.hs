@@ -30,7 +30,7 @@ However, it was somewhat hard to figure out the recursion relation getPossiblePa
 I almost resorted to calculating it with brute force for any n, but I'm
 glad I didn't, as the solution is quite efficient and elegant.
 
-The key was to realize that after 3 (maximum adapter), you would go to
+The key was to realize that after 3 contiguous ones (maximum adapter), you would go to
 n-1, n-2 and n-3, depending on your first step.
 
 Could be memoized, as it scales quite hard with n, but there's no need for this problem.

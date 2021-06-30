@@ -1,5 +1,9 @@
 module Main where
 
+import AOC10a
+import AOC10b
+import AOC11a
+import AOC11b
 import AOC1a
 import AOC1b
 import AOC2a
@@ -18,8 +22,6 @@ import AOC8a
 import AOC8b
 import AOC9a
 import AOC9b
-import AOC10a
-import AOC10b
 import System.Environment
 
 main :: IO ()
@@ -45,4 +47,6 @@ main = do
     "9b" -> aoc9b
     "10a" -> aoc10a
     "10b" -> aoc10b
+    "11a" -> aoc11a
+    "11b" -> aoc11b
     x -> error $ "Exercise " ++ x ++ " does not exist"
