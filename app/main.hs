@@ -6,6 +6,7 @@ import AOC11a
 import AOC11b
 import AOC12a
 import AOC12b
+import AOC13a
 import AOC1a
 import AOC1b
 import AOC2a
@@ -53,4 +54,5 @@ main = do
     "11b" -> aoc11b
     "12a" -> aoc12a
     "12b" -> aoc12b
+    "13a" -> aoc13a
     x -> error $ "Exercise " ++ x ++ " does not exist"
